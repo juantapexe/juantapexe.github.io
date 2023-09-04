@@ -1,0 +1,30 @@
+
+<html>
+<head>
+	<title>My Links</title>
+</head>
+<body>
+	<h1>My Links</h1>
+	<form>
+		<label for="link">Enter a link:</label>
+		<input type="text" id="link" name="link">
+		<button type="submit" onclick="addLink()">Add link</button>
+	</form>
+	<ul id="links-list"></ul>
+	
+	<script>
+		function addLink() {
+			event.preventDefault();
+			var link = document.getElementById("link").value;
+			var li = document.createElement("li");
+			var a = document.createElement("a");
+			a.href = link;
+			a.innerText = link;
+			li.appendChild(a);
+			document.getElementById("links-list").appendChild(li);
+			document.getElementById("link").value = "";
+		}
+	</script>
+</body>
+</html>
+
